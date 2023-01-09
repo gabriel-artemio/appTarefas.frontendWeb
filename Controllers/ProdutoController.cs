@@ -8,5 +8,20 @@ namespace CoreMVC_SistemaProdutos.Controllers
         {
             return View();
         }
+
+        public IActionResult InserirProduto()
+        {
+            return View();
+        }
+
+        public IActionResult EditarProduto()
+        {
+            return View();
+        }
+
+        public IActionResult ApagarConfirmacao()
+        {
+            return View();
+        }
     }
 }
