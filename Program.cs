@@ -13,7 +13,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Contexto>
     (options => options.UseMySql(
-        "server=localhost;initial catalog=dbprojeto;uid=root;pwd=arlabs2022",
+        "server=localhost;initial catalog=dbprojeto;uid=root;pwd=",
         Microsoft.EntityFrameworkCore.ServerVersion.Parse("6.3.10-mysql")));
 
 var app = builder.Build();
