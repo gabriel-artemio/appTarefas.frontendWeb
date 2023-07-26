@@ -1,4 +1,4 @@
-namespace CoreMVC_SistemaProdutos.Models
+namespace WebASPCrud.Models
 {
     public class ErrorViewModel
     {

@@ -1,11 +1,20 @@
-using CoreMVC_SistemaProdutos.DAL;
 using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql;
+using WebASPCrud.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddEntityFrameworkSqlServer()
-    .AddDbContext<BancoContext>(o => o.UseSqlServer(System.Configuration.GetConnectionString("DataBase")));
+
+
+//builder.Services.AddDbContext<Contexto>(options => options.UseMySql(
+//    "server=localhost;initial catalog=dbprojeto;uid=root;pwd=arlabs2022",
+//    Microsoft.EntityFrameworkCore.ServerVersion.Parse("6.3.10-mysql")));
+
+builder.Services.AddDbContext<Contexto>
+    (options => options.UseMySql(
+        "server=localhost;initial catalog=dbprojeto;uid=root;pwd=arlabs2022",
+        Microsoft.EntityFrameworkCore.ServerVersion.Parse("6.3.10-mysql")));
 
 var app = builder.Build();
 
@@ -17,9 +26,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(

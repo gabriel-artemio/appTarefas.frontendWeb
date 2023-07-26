@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebASPCrud.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<h1>Index</h1>*@
+
+<p>
+    <a asp-action="Create">Novo Registro</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary">
+                        <a asp-action="Edit" asp-route-id="@item.Id">Detalhes</a>
+                        @*<i class="bi-alarm"></i>*@
+                    </button>
+                    <button type="button" class="btn btn-warning">
+                        <a asp-action="Details" asp-route-id="@item.Id">Editar</a>
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                        <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
