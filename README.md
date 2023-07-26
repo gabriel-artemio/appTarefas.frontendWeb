@@ -1,4 +1,4 @@
-# ASP.Net Core Web App
+# ASP.Net Core MVC App
 ### Sistema de Cadastro de Usuários
 
 Este é um projeto em ASP.NET Core MVC, que terá como função cadastrar produtos e fazer todas as ações de CRUD.
