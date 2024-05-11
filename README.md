@@ -14,3 +14,8 @@ Para executar a aplicação, rode os seguintes comdandos
 ```bash
   pip install Flask
 ```
+
+
+## Autores
+
+- [@GabrielArtemio](https://github.com/gabriel-artemio)
