@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>+Saúde na Tela</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .scrollable-cards {
+            max-height: 400px; /* altura máxima dos cards */
+            overflow-y: auto; /* permite rolagem vertical */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Faça a sua pergunta</h1>
+        <form action="/" method="post">
+            <div class="form-group">
+                <label for="consulta">Digite sua dúvida:</label>
+                <input type="text" class="form-control" id="consulta" name="consulta" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Consultar</button>
+        </form>
+        
+        <h2>Resposta:</h2>
+        <div class="scrollable-cards">
+            {% for consulta, resposta in historico %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Pergunta: {{ consulta }}</h5>
+                    <p class="card-text">{{ resposta }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Botão para limpar o histórico -->
+        <form action="/limpar_historico" method="post" style="margin-top: 20px;">
+            <button type="submit" class="btn btn-danger">Limpar Histórico</button>
+        </form>
+    </div>
+</body>
+</html>
