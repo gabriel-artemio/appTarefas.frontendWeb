@@ -1,3 +1,16 @@
-# DescomplicaPy
 
-Aplicação voltada para a área da saúde, que consiste em auxiliar os pacientes em um pré-atendimento e sugerir as melhores opções.
+# +Saúde na Tela
+## Funcionalidades
+
+- Tirar dúvidas sobre medicações
+- Realizar um pré diagnóstico de acordo com os sinotmas do usuário
+- Orientar o usuário sobre as doenças
+
+
+## Rodando a aplicação
+
+Para executar a aplicação, rode os seguintes comdandos
+
+```bash
+  pip install Flask
+```
