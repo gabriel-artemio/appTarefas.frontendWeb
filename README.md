@@ -16,6 +16,6 @@ Para executar a aplicação, rode os seguintes comdandos
 ```
 
 
-## Autores
+## Autor
 
 - [@GabrielArtemio](https://github.com/gabriel-artemio)
