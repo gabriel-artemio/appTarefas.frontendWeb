@@ -1,3 +1,3 @@
-# Sistema para Gerenciar Academia
+# DescomplicaPy
 
-Será criada uma API em dotnet para gerenciar tarefas de academia
+Aplicação voltada para a área da saúde, que consiste em auxiliar os pacientes em um pré-atendimento e sugerir as melhores opções.
