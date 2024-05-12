@@ -18,7 +18,7 @@ Para executar a aplicação, rode os seguintes comdandos
   pip install Flask
 ```
 
-Abra o CMD na pasta do projeto e rode
+Para iniciar a aplicação, abra o CMD na pasta do projeto e rode
 
 ```bash
   python app.py
