@@ -7,6 +7,7 @@ Este projeto ainda está em fase de desenvolvimento, por conta do tempo não vai
 - Tirar dúvidas sobre medicações
 - Realizar um pré diagnóstico de acordo com os sinotmas do usuário
 - Orientar o usuário sobre as doenças
+- Atualmente a base de dados esta carregada com dados sobre dengue, coronavírus, AMA, UBS e Hospital
 
 
 ## Rodando a aplicação
