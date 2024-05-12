@@ -13,17 +13,35 @@
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">+Saúde na Tela</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/novo_item">Adicionar novo Embedding</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
-        <h1>Faça a sua pergunta</h1>
+        <h4>Faça a sua pergunta</h4>
         <form action="/" method="post">
             <div class="form-group">
                 <label for="consulta">Digite sua dúvida:</label>
                 <input type="text" class="form-control" id="consulta" name="consulta" required>
             </div>
-            <button type="submit" class="btn btn-primary">Consultar</button>
-        </form>
+            <button type="submit" class="btn btn-success">Consultar</button>
+        </form><br/>
         
-        <h2>Resposta:</h2>
+        <h4>Resposta:</h4>
         <div class="scrollable-cards">
             {% for consulta, resposta in historico %}
             <div class="card mb-3">

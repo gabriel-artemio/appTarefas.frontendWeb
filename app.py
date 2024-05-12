@@ -11,7 +11,7 @@ app.secret_key = 'AIzaSyBRvSVWy5zOcZES9KvWg9DCTxnRi9fr4nA'
 GOOGLE_API_KEY = "AIzaSyBRvSVWy5zOcZES9KvWg9DCTxnRi9fr4nA"
 genai.configure(api_key=GOOGLE_API_KEY)
 
-# Dados iniciais
+# Dados iniciais para a pesquisa
 initial_documents = [
     {
         "Titulo": "Corinthians",
@@ -31,7 +31,7 @@ df = pd.DataFrame(initial_documents)
 df.columns = ['Titulo', 'Conteudo']
 model = "models/embedding-001"
 
-# Função para calcular embeddings
+# calculando os embeddings
 def embed_fnc(title, text):
     return genai.embed_content(model=model,
                                content=text,
@@ -40,7 +40,7 @@ def embed_fnc(title, text):
 
 df["Embeddings"] = df.apply(lambda row: embed_fnc(row["Titulo"], row["Conteudo"]), axis=1)
 
-# Função para buscar a consulta
+# realizando a consulta na base de dados
 def buscar_consulta(consulta, base, model):
     embedding_da_consulta = genai.embed_content(model=model,
                                                 content=consulta,
@@ -65,7 +65,6 @@ def before_request():
 
 historico = []
 
-# Rota para a página inicial
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if 'historico' not in session:
@@ -82,13 +81,11 @@ def index():
 
     return render_template('index.html', historico=session['historico'], documentos=df.to_dict('records'))
 
-# Rota para limpar o histórico manualmente
 @app.route('/limpar_historico', methods=['POST'])
 def limpar_historico():
     zerar_historico()
     return redirect(url_for('index'))
 
-# Rota para adicionar novo item
 @app.route('/novo_item', methods=['GET', 'POST'])
 def novo_item():
     if request.method == 'POST':
