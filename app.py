@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import google.generativeai as genai
 from datetime import timedelta
+from data import initial_documents  # Importando o array initial_documents
 
 app = Flask(__name__)
 app.secret_key = 'AIzaSyBRvSVWy5zOcZES9KvWg9DCTxnRi9fr4nA'
@@ -10,22 +11,6 @@ app.secret_key = 'AIzaSyBRvSVWy5zOcZES9KvWg9DCTxnRi9fr4nA'
 # Configuração do Google GenAI
 GOOGLE_API_KEY = "AIzaSyBRvSVWy5zOcZES9KvWg9DCTxnRi9fr4nA"
 genai.configure(api_key=GOOGLE_API_KEY)
-
-# Dados iniciais para a pesquisa
-initial_documents = [
-    {
-        "Titulo": "Corinthians",
-        "Conteúdo": "7 vezes Campeão Brasileiro, 1 vez Campeão Libertadores e 2 vezes Mundial de Clubes, Maior campeão Paulista com 30 títulos"
-    },
-    {
-        "Titulo": "Santos",
-        "Conteúdo": "8 vezes Campeão Brasileiro, 3 vezes Campeão Libertadores e 2 vezes Mundial de Clubes"
-    },
-    {
-        "Titulo": "Real Madrid",
-        "Conteúdo": "14 vezes Campeão Champions League e muitas vezes campeões da La Liga"
-    }
-]
 
 df = pd.DataFrame(initial_documents)
 df.columns = ['Titulo', 'Conteudo']
