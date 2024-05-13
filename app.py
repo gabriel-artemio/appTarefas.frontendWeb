@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.secret_key = 'AIzaSyBRvSVWy5zOcZES9KvWg9DCTxnRi9fr4nA'
 
 # Configuração do Google GenAI
-GOOGLE_API_KEY = "AIzaSyBRvSVWy5zOcZES9KvWg9DCTxnRi9fr4nA"
+GOOGLE_API_KEY = "GOOGLE_API_KEY"
 genai.configure(api_key=GOOGLE_API_KEY)
 
 df = pd.DataFrame(initial_documents)
