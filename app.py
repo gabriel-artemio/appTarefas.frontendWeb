@@ -6,7 +6,7 @@ from datetime import timedelta
 from data import initial_documents  # Importando o array initial_documents
 
 app = Flask(__name__)
-app.secret_key = 'AIzaSyBRvSVWy5zOcZES9KvWg9DCTxnRi9fr4nA'
+app.secret_key = 'GOOGLE_API_KEY'
 
 # Configuração do Google GenAI
 GOOGLE_API_KEY = "GOOGLE_API_KEY"
